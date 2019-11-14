@@ -30,7 +30,7 @@ class DepartmentsController < ApplicationController
   def update
     @department = Department.find(params[:id])
 
-    if @department.update(department_params)
+    if @department.update(params.require(:department).permit(:name))
       redirect_to departments_path
     else
       render :edit
@@ -38,8 +38,7 @@ class DepartmentsController < ApplicationController
   end
 
   def destroy
-    @department.destroy
-    binding.pry
+    Department.find(params[:id]).destroy
     redirect_to departments_path
   end
 
