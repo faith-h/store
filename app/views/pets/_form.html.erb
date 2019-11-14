@@ -1,0 +1,23 @@
+<h1><%= @pet.id ? 'Edit Pet' : 'Create Pet' %></h1>
+<hr />
+<%= form_for [@department, @pet] do |p| %>
+  <%= p.label :name %>
+  <%= p.text_field :name, required: true, autofocus: true %>
+  <br />
+  <%= p.label :age %>
+  <%= p.text_area :age, required: true %>
+  <br />
+  <%= p.label :gender %>
+  <%= p.text_field :gender, required: true %>
+  <br />
+  <%= p.label :species %>
+  <%= p.text_field :species, required: true %>
+  <br />
+  <%= p.label :color %>
+  <%= p.text_field :color, required: true %>
+  <br />
+  <%= p.label :favorite_thing %>
+  <%= p.text_field :favorite_thing, required: true %>
+  <br />
+  <%= p.submit %>
+<% end %>

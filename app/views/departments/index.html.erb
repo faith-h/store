@@ -1,0 +1,20 @@
+<div class="header">
+
+<h1> Categories  </h1> 
+
+</div>
+
+
+<% @departments.each do |department| %>
+  <div class="box">
+  <h2>
+  <%= department.name %>
+  </h2>
+  </div>
+  <div class="link">
+  <%= link_to 'Show Pets', department_path(department) %>
+  <%= link_to 'New Category', new_department_path %>
+  <%= link_to 'Edit Category', edit_department_path(department) %>
+  <%= link_to 'Destroy Category', department, method: :delete %>
+  </div>
+<% end %>

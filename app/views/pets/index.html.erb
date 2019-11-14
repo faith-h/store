@@ -1,0 +1,15 @@
+<div class="header">
+
+<h1>Click A Pet For More Details</h1>
+
+<div>
+
+
+<div class="box">
+<ul>
+  <% @pets.each do |pet| %>
+    <li><%= link_to pet.name, [@department, pet] %></li>
+  <% end %>
+  <%= link_to 'Create a new pet', new_department_pet_path(@department) %>
+</ul>
+</div>

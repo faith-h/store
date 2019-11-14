@@ -1,0 +1,10 @@
+<h1>Add A Comment</h1>
+<%= form_for [@pet, @comment] do |p| %>
+  <%= p.label :body %>
+  <%= p.text_area :body, required: true %>
+  <br />
+  <%= p.label :author %>
+  <%= p.text_field :author, placeholder: 'Leave Blank To Remain Anonymous' %>
+  <br />
+  <%= p.submit %>
+<% end %>

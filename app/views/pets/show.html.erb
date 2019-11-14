@@ -1,0 +1,22 @@
+<div class ="header">
+<h1><%= @department.name %> - <%= @pet.name %></h1>
+</div>
+<div class="box">
+<p> Name: <%= @pet.name %></p>
+<p> Age: <%= @pet.age %></p>
+<p> Gender: <%= @pet.gender %></p>
+<p> Species: <%= @pet.species %></p>
+<p> Color: <%= @pet.color %></p>
+<p> Favorite Thing: <%= @pet.favorite_thing %></p>
+</div>
+
+<h2>Comments</h2>
+
+<% @pet.comments.each do |comment| %>
+  <%= render 'comments/comment', { comment: comment } %>
+<% end %>
+
+<%= link_to 'Add Comment', new_pet_comment_path(@pet) %>
+<%= link_to 'Edit Pet', edit_department_pet_path([@department, @pet]) %>
+<%= link_to 'Delete Pet', [@department, @pet], method: :delete %>
+<%= link_to 'Back To Pets', department_pets_path(@department) %>
